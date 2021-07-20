@@ -1,0 +1,28 @@
+{
+  "name": "api-drivezy.com-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pujarianil4/api-drivezy.com-clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pujarianil4/api-drivezy.com-clone/issues"
+  },
+  "homepage": "https://github.com/pujarianil4/api-drivezy.com-clone#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3",
+    "multer": "^1.4.2"
+  }
+}
