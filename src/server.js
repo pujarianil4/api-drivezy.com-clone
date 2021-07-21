@@ -11,7 +11,7 @@ const Port= process.env.PORT
 async function start(){
     await connect();
     app.listen(Port,()=>{
-        console.log("localhost:8080");
+        console.log(`localhost:${Port}`);
     })
 }
 
