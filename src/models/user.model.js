@@ -3,8 +3,10 @@ const mongoose = require('mongoose')
 const bcrypt= require("bcrypt")
 
 const UserSchema= mongoose.Schema({
-  mobile:{type:mongoose.Schema.Types.ObjectId,ref:"mobile",required:false},
-    email:{type:String,required:true},
+  mobile:{type:String,required:false},
+  mobileverified:{type:Boolean,required:false},
+    email:{type:String,required:false},
+    emailverified:{type:Boolean,required:false},
     password:{type:String,required:true}
   },{
       versionKey:false,
