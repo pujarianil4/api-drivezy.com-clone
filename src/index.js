@@ -41,8 +41,7 @@ app.get('/auth/google',
   passport.authenticate('google', { scope: 
     [
     'https://www.googleapis.com/auth/userinfo.email',
-    'https://www.googleapis.com/auth/userinfo.profile',
-    'https://www.googleapis.com/auth/user.phonenumbers.read'
+    'https://www.googleapis.com/auth/userinfo.profile'
 ] }));
 
 
@@ -52,8 +51,9 @@ app.get('/auth/google/callback',
    const {user,token}= req.user
   
    res.status(201).send({user,token})
+   
 
-    
+   res.redirect('http://localhost:3000');
   });
 
 

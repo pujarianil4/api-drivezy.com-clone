@@ -7,6 +7,8 @@ const UserSchema= mongoose.Schema({
   mobileverified:{type:Boolean,required:false},
     email:{type:String,required:false},
     emailverified:{type:Boolean,required:false},
+    name:{type:String,required:false},
+    avatar:{type:String,required:false},
     password:{type:String,required:true}
   },{
       versionKey:false,

@@ -23,14 +23,14 @@ passport.use(new GoogleStrategy({
   },
  async function(accessToken, refreshToken, profile, done) {
     
-      
+  console.log("profile",profile);
     let user= await User.findOne({email: profile?._json?.email})
-    console.log("user exited",user);
+   
    
     
     if(user==null){
         
-        user= await User.create({email:profile?._json?.email,password:uuid(),emailverified:true})
+        user= await User.create({email:profile?._json?.email,name:profile?._json?.name,avatar:profile?._json?.picture,password:uuid(),emailverified:true})
         console.log("created",user);
     }
    
