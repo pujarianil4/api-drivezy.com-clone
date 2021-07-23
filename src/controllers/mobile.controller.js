@@ -50,10 +50,10 @@ router.post("/verify", async (req,res)=>{
    
  
     if(mobileData.status=="approved"){
-        console.log("data",mobileData);
+       
         
         let user= await User.findOne({mobile:mobileData.to}).lean().exec()
-        console.log("user",user);
+      
        if(user){
         const token= newToken(user)
       
@@ -64,6 +64,7 @@ router.post("/verify", async (req,res)=>{
      user= await User.create({
             mobile:mobileData.to,
             mobileverified:true,
+            name:req.body.name,
             password: uuid()
         })
 
