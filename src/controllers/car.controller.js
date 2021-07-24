@@ -10,6 +10,12 @@ router.get("/", async (req,res)=>{
 
     res.status(200).send({data:cars})
 })
+router.get("/:id", async (req,res)=>{
+
+    const cars= await Car.findById(req.params.id).lean().exec()
+
+    res.status(200).send({data:cars})
+})
 
 router.post("/", async (req,res)=>{
 

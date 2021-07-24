@@ -24,10 +24,7 @@ router.get("/", async (req,res)=>{
 
 router.post("/login", async (req,res)=>{
  try{
-    // const mobileData = await Twilio.verify.services(servideID).verifications.create({
-    //     to:`+91${req.body.mobile}`,
-    //     channel:"sms"
-    // })
+
 
     const mobile = await Twilio.verify.services(servideID).verifications.create({
         to:`+91${req.body.mobile}`,
