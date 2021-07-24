@@ -11,6 +11,13 @@ router.get("/", async (req,res)=>{
     res.status(200).send({data:bikes })
 })
 
+router.get("/:id", async (req,res)=>{
+
+    const bikes = await Bike.findById(req.params.id).lean().exec()
+
+    res.status(200).send({data:bikes })
+})
+
 router.post("/", async (req,res)=>{
 
     const bikes = await Bike.create(req.body)

@@ -1,5 +1,7 @@
 const express= require('express')
+const  LocalStorage = require('node-localstorage').LocalStorage
 
+const localStorage = new LocalStorage('./scratch');
 const app= express()
 
 app.use(express.json())
@@ -52,6 +54,7 @@ app.get('/auth/google/callback',
   
    res.status(201).send({user,token})
    
+
 
    res.redirect('http://localhost:3000');
   });
