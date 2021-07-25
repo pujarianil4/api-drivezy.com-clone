@@ -13,7 +13,7 @@ router.get("/", async (req,res)=>{
 
 router.get("/:id", async (req,res)=>{
 
-    const bikes = await Booking.find({user:req.params.id}).populate("carID").populate("bikeID").populate("user").lean().exec()
+    const bikes = await Booking.find({user:req.params.id}).populate("carID").populate("bikeID").lean().exec()
 
     res.status(200).send({data:bikes })
 })
@@ -21,9 +21,18 @@ router.get("/:id", async (req,res)=>{
 router.post("/", async (req,res)=>{
 
     const bikes = await Booking.create(req.body)
-    const product = await Booking.find({user:req.body.user}).populate("carID").populate("bikeID").populate("user").lean().exec()
+    const product = await Booking.find({user:req.body.user}).populate("carID").populate("bikeID").lean().exec()
 
     res.status(200).send({data:product })
+})
+
+router.patch("/:id/:userID", async (req,res)=>{
+
+    await Booking.findByIdAndUpdate(req.params.id,req.body,{new:true}).exec()
+
+    const bikes = await Booking.find({user:req.params.userID}).populate("carID").populate("bikeID").lean().exec()
+
+    res.status(200).send({data:bikes })
 })
 
 module.exports= router
