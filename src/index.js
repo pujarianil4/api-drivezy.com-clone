@@ -16,12 +16,17 @@ const CarController= require("./controllers/car.controller")
 const BikeController = require("./controllers/bike.controller")
 
 const MobileAuthController= require("./controllers/mobile.controller")
+
+const BookingController= require("./controllers/booking.controller")
+
 // Routes
 
 //------- DataBase Start--------------//
 app.use("/cars",CarController)
 
 app.use("/bikes",BikeController)
+
+app.use("/booking",BookingController)
 
 //------- DataBase End--------------//
 
