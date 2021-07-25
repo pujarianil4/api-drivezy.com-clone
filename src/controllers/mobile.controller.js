@@ -74,4 +74,19 @@ router.post("/verify", async (req,res)=>{
     
  })
 
+
+ router.get("/user/:id", async (req,res)=>{
+    try{
+   
+   const user= await User.findById(req.params.id).lean().exec()
+  
+   const token= newToken(user)
+      
+   return res.status(201).send({data:{user,token}})
+    } catch{
+       res.status(201).send({data: "User Not Available"})
+    }
+   
+   })
+
 module.exports= router
