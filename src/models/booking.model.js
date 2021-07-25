@@ -1,15 +1,15 @@
 const mongoose = require('mongoose')
 
 const bookingSchema= mongoose.Schema({
-  carID:{type:mongoose.Schema.Types.ObjectId,ref:"car",required:true},
-  bikeID:{type:mongoose.Schema.Types.ObjectId,ref:"bike",required:true},
-    price:{type:String,required:true},
-    package:{type:String,required:true},
-    pickup:{type:String,required:true},
-    drop:{type:String,required:true},
-    payment:{type:Boolean,required:true},
-    status:{type:Boolean,required:true},
-    user:{type:mongoose.Schema.Types.ObjectId,ref:"user",required:true},
+  carID:{type:mongoose.Schema.Types.ObjectId,ref:"car",required:false},
+  bikeID:{type:mongoose.Schema.Types.ObjectId,ref:"bike",required:false},
+    price:{type:String,required:false},
+    package:{type:String,required:false},
+    pickup:{type:String,required:false},
+    drop:{type:String,required:false},
+    payment:{type:Boolean,required:false},
+    status:{type:Boolean,required:false},
+    user:{type:mongoose.Schema.Types.ObjectId,ref:"user",required:false},
   },{
       versionKey:false,
       timestamps: true
